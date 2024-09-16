@@ -8,22 +8,16 @@ const costController = require('../../controllers/cost.controller');
 const paymentController = require('../../controllers/payment.controller');
 const { sponsorValidation } = require('../../validations');
 const { costValidation } = require('../../validations');
-const { createPayment,verifyPayment } = require('../../validations/payment.validation');
-
-
+const { createPayment, verifyPayment } = require('../../validations/payment.validation');
 
 const router = express.Router();
 
-router
-  .route('/initializePayment')
-  .post(validate(createPayment), paymentController.initializePayment)
-  //.get(auth('getUsers'), validate(costValidation.getUsers), userController.getUsers);
+router.route('/initializePayment').post(validate(createPayment), paymentController.initializePayment);
+//.get(auth('getUsers'), validate(costValidation.getUsers), userController.getUsers);
 
-  router
-  .route('/verifyPaymnet')
-  .post(validate(verifyPayment), paymentController.vPayment)
-  //.get(auth('getUsers'), validate(costValidation.getUsers), userController.getUsers);
-  
+router.route('/verifyPayment').post(validate(verifyPayment), paymentController.vPayment);
+//.get(auth('getUsers'), validate(costValidation.getUsers), userController.getUsers);
+
 router
   .route('/:userId')
   .get(auth('getUsers'), validate(userValidation.getUser), userController.getUser)
