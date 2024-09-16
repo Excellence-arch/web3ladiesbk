@@ -1,0 +1,10 @@
+module.exports.authService = require('./auth.service');
+module.exports.emailService = require('./email.service');
+module.exports.tokenService = require('./token.service');
+module.exports.userService = require('./user.service');
+module.exports.sponsorService = require('./sponsor.service');
+module.exports.costService = require('./cost.service');
+module.exports.cryptoService = require('./crypto.service');
+//module.exports.bankTransferService = require('./bankTransfer.service');
+module.exports.createPayment = require('./paystack.service');
+module.exports.verifyPayment = require('./paystack.service');
